@@ -1,28 +1,63 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import CatList from './CatList';
 import './App.css';
 
+
+import Cat1 from './images/cat1.jpg';
+import Cat2 from './images/cat2.jpg';
+import Cat3 from './images/cat3.jpg';
+import Cat4 from './images/cat4.jpg';
+import Cat5 from './images/cat5.jpg';
+
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    state = {
+        now: null,
+        cats: [
+            {
+                name: "Tyler",
+                imgSrc: Cat1,
+                clickCount: 0,
+                id:1
+            },
+            {
+                name: "Jack",
+                imgSrc: Cat2,
+                clickCount: 0,
+                id:2
+            },
+            {
+                name: "Ming",
+                imgSrc: Cat3,
+                clickCount: 0,
+                id:3
+            },
+            {
+                name: "Naccy",
+                imgSrc: Cat4,
+                clickCount: 0,
+                id:4
+            },
+            {
+                name: "Rock",
+                imgSrc: Cat5,
+                clickCount: 0,
+                id:5
+            }
+        ]
+    };
+
+
+
+    render() {
+        const { cats } = this.state;
+        return (
+            <div>
+                <CatList cats={cats}/>
+            </div>
+        );
+    }
 }
 
 export default App;
